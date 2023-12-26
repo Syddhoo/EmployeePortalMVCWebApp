@@ -1,0 +1,46 @@
+﻿@model List<EmployeePortalMVCWebApp.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h1>Employees</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date Of Joining</th>
+            <th>Designation</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Grade</th>
+            <th>City</th>
+            <th>Country</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+            <td>@employee.EmployeeId</td>
+            <td>@employee.Name</td>
+            <td>@employee.Email</td>
+            <td>@employee.DateOfJoining.ToString("dd-MM-yyyy")</td>
+            <td>@employee.Designation</td>
+            <td>@employee.PhoneNumber</td>
+            <td>@employee.Address</td>
+            <td>@employee.Gender</td>
+            <td>@employee.Grade</td>
+            <td>@employee.City</td>
+            <td>@employee.Country</td>
+            <td><a href="Employee/View/@employee.EmployeeId">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
